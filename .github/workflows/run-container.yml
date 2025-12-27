@@ -36,8 +36,8 @@ jobs:
 
       - name: Setup SSH Key
         run: |
-          echo "${{ secrets.EC2_SSH_KEY }}" > Python.pem
-          chmod 600 Python.pem
+          echo "${{ secrets.EC2_SSH_KEY }}" > jenkins.pem
+          chmod 600 jenkins.pem
 
       - name: SSH into EC2 and run Docker
         run: |
