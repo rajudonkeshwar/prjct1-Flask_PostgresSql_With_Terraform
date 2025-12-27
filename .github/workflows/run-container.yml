@@ -50,7 +50,7 @@ jobs:
             sudo usermod -aG docker ec2-user
 
             # ECR login
-            aws ecr get-login-password --region ca-central-1 | sudo docker login --username AWS --password-stdin ${ECR_REPO}
+            aws ecr get-login-password --region us-east-1 | sudo docker login --username AWS --password-stdin ${ECR_REPO}
 
             # Pull and run the latest image
             sudo docker pull ${ECR_REPO}:latest
