@@ -1,10 +1,10 @@
 name: Deploy Flask App on EC2
 
 on:
-  # workflow_run:
-  #   workflows: [Deploy Flask App with Terraform]
-  #   types:
-  #     - completed
+  workflow_run:
+    workflows: [Deploy Flask App with Terraform]
+    types:
+      - completed
   push:
     branches: [ main ]
 
