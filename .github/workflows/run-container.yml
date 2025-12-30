@@ -46,10 +46,11 @@ jobs:
           ssh -o StrictHostKeyChecking=no -i jenkins.pem ubuntu@${{ env.EC2_IP }} << EOF
             # Install Docker if not present
             sudo apt update -y
-            sudo apt install -y docker
+            sudo apt install docker.io -y
             sudo systemctl enable docker
             sudo systemctl start docker
             sudo usermod -aG docker ubuntu
+            sudo apt install awscli -y
 
             # ECR login
             aws ecr get-login-password --region us-east-1 | sudo docker login --username AWS --password-stdin ${ECR_REPO}
