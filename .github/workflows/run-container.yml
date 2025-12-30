@@ -38,7 +38,6 @@ jobs:
         run: |
           echo "${{ secrets.EC2_SSH_KEY }}" > jenkins.pem
           chmod 600 jenkins.pem
-          cat jenkins.pem
 
       - name: SSH into EC2 and run Docker
         run: |
@@ -70,3 +69,4 @@ jobs:
           ECR_REPO: ${{ env.ECR_REPO }}
           DB_USERNAME: ${{ secrets.DB_USERNAME }}
           DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
+          EC2_SSH_KEY: ${{ secrets.EC2_SSH_KEY }}
